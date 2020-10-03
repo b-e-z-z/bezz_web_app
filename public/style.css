@@ -15,7 +15,7 @@
 }
 
 .content-margin {
-  margin-top: calc(40vh - 125px);
+  margin-top: calc(45vh - 96px);
 }
 
 .main-toolbar {
@@ -79,7 +79,6 @@ a:link.margin-text {
 
 .bezz-logo {
   max-width: 200px;
-  margin-right: -32px !important;
 }
 
 footer {
