@@ -12,18 +12,26 @@
 
 .content {
   z-index: 10;
-  margin-top: 250px;
+}
+
+.content-margin {
+  margin-top: calc(40vh - 125px);
 }
 
 .main-toolbar {
   z-index: 20;
   background: none !important;
   color: white !important;
+  mix-blend-mode: difference;
 }
 
 a:visited,
 a:link {
   color: white !important;
+}
+a:visited.margin-text,
+a:link.margin-text {
+  color: black !important;
 }
 
 .toolbar-title {
@@ -52,11 +60,26 @@ a:link {
 
 .link-image {
   height: 100%;
+}
+
+.image-invert {
   filter: invert(100%);
+}
+
+#app {
+  background: black;
+}
+
+#app .application--wrap {
+  background-image: url("http://b-e-z-z.com/static/moon.jpg");
+  background-size: cover;
+  background-position-y: center;
+  background-position-x: center;
 }
 
 .bezz-logo {
   max-width: 200px;
+  margin-right: -32px !important;
 }
 
 footer {

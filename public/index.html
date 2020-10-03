@@ -28,15 +28,15 @@
   <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
-  <div id="app">
-    <v-app>
+  <div id="app" style="background: black !important;">
+    <v-app style="background: black !important;">
       <v-toolbar color="white" height="128" class="main-toolbar elevation-0">
         <v-toolbar-title class="toolbar-title">bezz</v-toolbar-title>
-        <v-img src="./static/bezz.png" :aspect-ratio="1/1" contain position="right center" class="link-image bezz-logo d-flex"></v-img>
+        <v-img src="./static/bezz.png" :aspect-ratio="1/1" contain position="right center" class="link-image image-invert bezz-logo d-flex"></v-img>
       </v-toolbar>
-      <v-content class="content">
+      <v-content class="content" v-bind:class="{ 'content-margin': showMargin }">
         <v-container fluid>
-          <v-flex xs12 offset-lg2 lg8>
+          <v-flex xs12 offset-sm1 sm10 offset-md2 md8 offset-lg2 lg8>
             <v-layout row wrap>
               <template v-for="(link, l) in links">
                 <v-flex xs12 lg6 v-bind:offset-lg3="isCentered(l)" class="pa-2" @click="navigateToLink(link, $event)">
@@ -44,13 +44,13 @@
                     <v-layout row fill-height class="pa-2">
                       <v-flex xs8 fill-height>
                         <v-card-title class="fill-height">
-                          <a :href="link.link" class="card-link">
+                          <a :href="link.link" class="card-link" v-bind:class="{ 'margin-text': needsInvert(l) }">
                             {{ link.label }}
                           </a>
                         </v-card-title>
                       </v-flex>
                       <v-flex xs4>
-                        <v-img :src="link.img" :aspect-ratio="1/1" contain position="center center" class="link-image"></v-img>
+                        <v-img :src="link.img" :aspect-ratio="1/1" contain position="center center" class="link-image" v-bind:class="{ 'image-invert': !needsInvert(l) }"></v-img>
                       </v-flex>
                     </v-layout>
                   </v-card>
@@ -60,11 +60,6 @@
           </v-flex>
         </v-container>
       </v-content>
-      <v-footer>
-        <v-slide-y-reverse-transition>
-          <v-img v-show="footerLoaded" src="./static/moon.jpg" @load="footerLoaded = true"></v-img>
-        </v-slide-y-reverse-transition>
-      </v-footer>
     </v-app>
   </div>
   <!--

@@ -40,6 +40,15 @@ var vm = new Vue({
             ]
         };
     },
+    computed: {
+        showMargin () {
+            console.log(this.$vuetify.breakpoint.name)
+            if (this.$vuetify.breakpoint.name == "lg" || this.$vuetify.breakpoint.name == "xl") {
+                return true
+            }
+            return false
+        }
+    },
     methods: {
         navigateToLink: function (link, e) {
             var win = window.open(link.link, '_blank');
@@ -48,6 +57,12 @@ var vm = new Vue({
         },
         isCentered(l) {
             if (l == this.links.length - 1 && l % 2 == 0) {
+                return true
+            }
+            return false
+        },
+        needsInvert(l) {
+            if (l <= 1 && !this.showMargin) {
                 return true
             }
             return false
