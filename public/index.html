@@ -34,7 +34,7 @@
         <v-toolbar-title class="toolbar-title">bezz</v-toolbar-title>
         <v-img src="./static/bezz.png" :aspect-ratio="1/1" contain position="right center" class="link-image image-invert bezz-logo d-flex"></v-img>
       </v-toolbar>
-      <v-content class="content" v-bind:class="{ 'content-margin': showMargin }">
+      <v-content class="content" v-bind:class="{ 'content-desktop-margin': showMargin, 'content-mobile-margin': !showMargin }">
         <v-container fluid>
           <v-flex xs12 offset-sm1 sm10 offset-md2 md8 offset-lg2 lg8>
             <v-layout row wrap>

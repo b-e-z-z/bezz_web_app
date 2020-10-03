@@ -14,8 +14,12 @@
   z-index: 10;
 }
 
-.content-margin {
+.content-desktop-margin {
   margin-top: calc(45vh - 96px);
+}
+
+.content-mobile-margin {
+  margin-top: 64px;
 }
 
 .main-toolbar {
@@ -71,7 +75,7 @@ a:link.margin-text {
 }
 
 #app .application--wrap {
-  background-image: url("http://b-e-z-z.com/static/moon.jpg");
+  background-image: url("./static/moon.jpg");
   background-size: cover;
   background-position-y: center;
   background-position-x: center;
