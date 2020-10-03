@@ -1,0 +1,63 @@
+.application {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  color: black !important;
+  height: 100vh !important;
+  background-color: #ffffff !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.content {
+  z-index: 10;
+}
+
+a:visited,
+a:link {
+  color: inherit;
+}
+
+.toolbar-title {
+  font-size: 48px;
+  letter-spacing: 32px;
+  font-weight: 200;
+  width: calc(90vw - 128px);
+  overflow: visible;
+  z-index: 1;
+}
+
+.link-card {
+  height: 120px !important;
+  max-height: calc((100vh - 128px) / 6.0);
+  cursor: pointer;
+}
+
+.card-link {
+  text-align: center;
+  font-size: calc((100vh - 128px) / 15.0);
+  line-height: initial;
+  text-decoration: none;
+  width: 100%;
+}
+
+.link-image {
+  height: 100%;
+}
+
+.bezz-logo {
+  max-width: 200px;
+}
+
+footer {
+  position: fixed;
+  width: 100vw;
+  bottom: 0px;
+  height: auto !important;
+  z-index: 0;
+}
+
+footer .slide-y-reverse-transition-enter-active {
+  transition-duration: 1s;
+}

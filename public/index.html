@@ -1,0 +1,129 @@
+<html>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156267492-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-156267492-1');
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Vue -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.min.js"></script>
+
+  <!-- Vuetify -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.21/vuetify.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.21/vuetify.min.css">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+  <!-- Local -->
+  <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-toolbar color="white" height="128">
+        <v-toolbar-title class="toolbar-title">bezz</v-toolbar-title>
+        <v-img src="./static/bezz.png" :aspect-ratio="1/1" contain position="right center" class="link-image bezz-logo d-flex"></v-img>
+      </v-toolbar>
+      <v-content class="content">
+        <v-container fluid>
+          <v-flex xs12 offset-lg2 lg8>
+            <v-layout row wrap>
+              <template v-for="(link, l) in links">
+                <v-flex v-if="l == links.length - 1 && l % 2 == 0" xs12 lg6 offset-lg3 class="pa-2 " @click="navigateToLink(link, $event)">
+                  <v-card class="link-card">
+                    <v-layout row fill-height class="pa-2">
+                      <v-flex xs8 fill-height>
+                        <v-card-title class="fill-height">
+                          <a :href="link.link" class="card-link">
+                            {{ link.label }}
+                          </a>
+                        </v-card-title>
+                      </v-flex>
+                      <v-flex xs4>
+                        <v-img :src="link.img" :aspect-ratio="1/1" contain position="center center" class="link-image"></v-img>
+                      </v-flex>
+                    </v-layout>
+                  </v-card>
+                </v-flex>
+                <v-flex v-else xs12 lg6 class="pa-2 " @click="navigateToLink(link, $event)">
+                  <v-card class="link-card">
+                    <v-layout row fill-height class="pa-2">
+                      <v-flex xs8 fill-height>
+                        <v-card-title class="fill-height">
+                          <a :href="link.link" class="card-link">
+                            {{ link.label }}
+                          </a>
+                        </v-card-title>
+                      </v-flex>
+                      <v-flex xs4>
+                        <v-img :src="link.img" :aspect-ratio="1/1" contain position="center center" class="link-image"></v-img>
+                      </v-flex>
+                    </v-layout>
+                  </v-card>
+                </v-flex>
+             </template>
+            </v-layout>
+          </v-flex>
+        </v-container>
+      </v-content>
+      <v-footer>
+        <v-slide-y-reverse-transition>
+          <v-img v-show="footerLoaded" src="./static/Footer.jpg" @load="footerLoaded = true"></v-img>
+        </v-slide-y-reverse-transition>
+      </v-footer>
+    </v-app>
+  </div>
+  <!--
+  ...............................................................................
+  ...............................................................................
+  ...............................................................................
+  ...............................................................................
+  ...............................................    ............................
+  ..........................................            .........................
+  ....................................                    .......................
+  ...............................                      .  .......................
+  ............................                        ....... ...................
+  ..........................                           .. ... ...................
+  .........................                               .......................
+  .......................                                   .....................
+  ......................                                    .... ................
+  ....................                                       . .  ...............
+  ...................                                          ..................
+  ...................                                         ...................
+  ...................                                          ..................
+  ..................                                          ...................
+  ..................                                         ....................
+  .................                                         .....................
+  ................                                          .....................
+  ...............                                          ......................
+  ..............                                          .......................
+  ..............                                         ........................
+  .................                                   ...........................
+  ...................                                 ...........................
+  ..................                                   ..........................
+  ...................                                  ..........................
+  ...................                                    ........................
+  ....................                                     ......................
+  ....................                             ......... ....................
+  ......................       .........          ...........  ..................
+  .......................................        ................................
+  ...............................................................................
+  ........................................  ...  ................................
+  ...............................................................................
+  ........................................ ......................................
+  ........................................ ......................................
+  ...............................................................................
+  -->
+  <script type="text/javascript" src="./index.js"></script>
+</body>
+</html>
