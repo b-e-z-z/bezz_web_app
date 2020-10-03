@@ -46,5 +46,11 @@ var vm = new Vue({
             win.focus();
             e.preventDefault();
         },
+        isCentered(l) {
+            if (l == this.links.length - 1 && l % 2 == 0) {
+                return true
+            }
+            return false
+        }
     }
 });

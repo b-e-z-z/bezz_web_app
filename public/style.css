@@ -1,7 +1,7 @@
 .application {
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
-  color: black !important;
+  color: white !important;
   height: 100vh !important;
   background-color: #ffffff !important;
 }
@@ -12,11 +12,18 @@
 
 .content {
   z-index: 10;
+  margin-top: 250px;
+}
+
+.main-toolbar {
+  z-index: 20;
+  background: none !important;
+  color: white !important;
 }
 
 a:visited,
 a:link {
-  color: inherit;
+  color: white !important;
 }
 
 .toolbar-title {
@@ -32,6 +39,7 @@ a:link {
   height: 120px !important;
   max-height: calc((100vh - 128px) / 6.0);
   cursor: pointer;
+  background: none !important;
 }
 
 .card-link {
@@ -44,6 +52,7 @@ a:link {
 
 .link-image {
   height: 100%;
+  filter: invert(100%);
 }
 
 .bezz-logo {
